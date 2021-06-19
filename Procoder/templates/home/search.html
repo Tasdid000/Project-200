@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Search Results {% endblock title %}
+
+
+{% block body %}
+<div class="container my-3">
+    <h1 _ngcontent-serverapp-c7="" class="page-header"> Search Results <small _ngcontent-serverapp-c7="">For
+        '{{query}}'</small></h1>
+    {% if allposts|length < 1 %}
+    <div _ngcontent-serverapp-c7="" class="col-lg-12">
+
+
+        <hr _ngcontent-serverapp-c7="">
+        <div _ngcontent-serverapp-c7="" class="text-center">
+
+        </div>
+    </div>
+    <h2 _ngcontent-serverapp-c47="">Sorry we have 0 search results for '{{query}}'.<br
+            _ngcontent-serverapp-c47="">Try again with another specific search term</h2>
+
+
+    {% endif %}
+    <div _ngcontent-serverapp-c7="" class="col-lg-12">
+
+
+        <hr _ngcontent-serverapp-c7="">
+        <div _ngcontent-serverapp-c7="" class="text-center">
+
+        </div>
+    </div>
+</div>
+<div class="container my-3">
+    {% for post in allposts %}
+
+
+    <div class="col p-4 d-flex flex-column position-static">
+        <h3 class="mb-0">{{post.title}}</h3>
+        <div class="mb-1 text-muted">{{post.datetime}}</div>
+        <p class="card-text mb-auto">{{post.content| truncatechars:100 }}</p>
+        <a _ngcontent-serverapp-c7="" class="btn btn-sm btn-outline-danger" href="/blog/{{post.slug}}">Read More <span
+                _ngcontent-serverapp-c7="" class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock body %}

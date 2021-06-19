@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Contact {% endblock title %}
+
+
+{% block body %}
+
+
+<div class="container my-3">
+    <h4>Contact ProCoder admin </h4>
+
+    <form action="/contact" method="post" style="width: 700px">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="form-label" for="name">Your Name:</label>
+            <input _ngcontent-serverapp-c31="" class="form-control ng-untouched ng-pristine ng-invalid" id="name"
+                   name="name" ngmodel=""
+                   placeholder="Enter your Name" required="" type="name">
+        </div>
+        <div class="form-group>
+            <label for=" email
+        " class="form-label"> Your Email address: </label>
+        <input _ngcontent-serverapp-c31="" class="form-control ng-untouched ng-pristine ng-invalid" id="email"
+               name="email" ngmodel=""
+               placeholder="Enter your Email" required="" type="email">
+        <small class="form-text" id="emailHelp">We'll never share your email with anyone else.</small>
+</div>
+<div class="form-group">
+    <label class="form-label" for="phone">Your Phone Number</label>
+    <input _ngcontent-serverapp-c31="" class="form-control ng-untouched ng-pristine ng-invalid" id="phone"
+           maxlength="10"
+           minlength="10" name="phone" ngmodel="" placeholder="Enter your Phone Number" required=""
+           type="number">
+</div>
+<div class="form-group">
+    <label class="form-label" for="content">Describe what you want to contact me for here </label>
+    <textarea _ngcontent-serverapp-c31="" class="form-control ng-untouched ng-pristine ng-invalid" id="message"
+              name="content" ngmodel=""
+              placeholder="Your message" required="" type="text"></textarea>
+</div>
+
+<br>
+
+<button _ngcontent-serverapp-c31="" class="btn btn-dark" type="submit">Submit</button>
+</form>
+{% endblock body %}
+</dev>
+    
