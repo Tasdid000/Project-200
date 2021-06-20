@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.db.models import query
+from django.shortcuts import render, HttpResponse
 from django.contrib import messages
-from django.shortcuts import render
 from home.models import Contact
+from blog.models import Post
+
+
 
 
 # Create your views here.
