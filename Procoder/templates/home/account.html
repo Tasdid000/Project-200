@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Account {% endblock title %}
+
+
+
+{% block body %}
+{% load static %}
+
+<div _ngcontent-serverapp-c45="" class="container">
+    <div _ngcontent-serverapp-c45="" class="col-lg-12 my-4 mx-2">
+        <h2 _ngcontent-serverapp-c45="">Update Profile</h2>
+        <form _ngcontent-serverapp-c45="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid">
+            {% csrf_token %}
+            <input _ngcontent-serverapp-c45="" type="hidden" name="formType" value="changeProfile">
+            <div _ngcontent-serverapp-c45="" class="form-row">
+                <div _ngcontent-serverapp-c45="" class="form-group col-md-6"><label _ngcontent-serverapp-c45=""
+                        for="userName">Name</label><input _ngcontent-serverapp-c45="" type="name" name="userName"
+                        id="userName" placeholder="Your Name" required=""
+                        class="form-control ng-untouched ng-pristine ng-valid"></div>
+            </div>
+            <div _ngcontent-serverapp-c45="" class="form-group"><label _ngcontent-serverapp-c45="" for="userPhone">Your
+                    Phone</label><input _ngcontent-serverapp-c45="" type="phone" name="userPhone" id="UserPhone"
+                    placeholder="Your Phone" pattern="[0-9+ ]*" minlength="4" required=""
+                    class="form-control ng-untouched ng-pristine ng-invalid"></div>
+            <div _ngcontent-serverapp-c45="" class="form-group"><label _ngcontent-serverapp-c45=""
+                    for="userAddress">Mailing Address</label><input _ngcontent-serverapp-c45="" type="text"
+                    name="userAddress" id="userAddress" placeholder="Address" ngmodel="" required=""
+                    class="form-control ng-untouched ng-pristine ng-invalid"></div><br>
+            <button _ngcontent-serverapp-c45="" type="submit" class="btn btn-dark">Update</button>
+        </form>
+    </div>
+    <div _ngcontent-serverapp-c45="" class="col-lg-12 my-4 mx-2">
+        <h2 _ngcontent-serverapp-c45="">Change your password</h2>
+        <form _ngcontent-serverapp-c45="" novalidate="" method="post" class="mb-3 ng-untouched ng-pristine ng-invalid">
+            {% csrf_token %}
+            <div _ngcontent-serverapp-c45="" class="form-row">
+                <div _ngcontent-serverapp-c45="" class="form-group col-md-12"><label _ngcontent-serverapp-c45=""
+                        for="oldpassword">Your Password</label><input _ngcontent-serverapp-c45="" type="password"
+                        id="oldpassword" name="oldpassword" placeholder="Your Password" ngmodel="" required=""
+                        class="form-control ng-untouched ng-pristine ng-invalid"></div>
+            </div>
+            <div _ngcontent-serverapp-c45="" class="form-row">
+                <div _ngcontent-serverapp-c45="" class="form-group col-md-6"><label _ngcontent-serverapp-c45=""
+                        for="newpassword">New Password</label><input _ngcontent-serverapp-c45="" type="password"
+                        id="newpassword" name="newpassword" placeholder="New Password" ngmodel="" required=""
+                        class="form-control ng-untouched ng-pristine ng-invalid"></div>
+                <div _ngcontent-serverapp-c45="" class="form-group col-md-6"><label _ngcontent-serverapp-c45=""
+                        for="newpassword2">Confirm New Password</label><input _ngcontent-serverapp-c45=""
+                        type="password" id="newpassword2" name="newpassword2" placeholder="Confirm New Password"
+                        ngmodel="" required="" class="form-control ng-untouched ng-pristine ng-invalid"></div>
+            </div><br>
+            <button _ngcontent-serverapp-c45="" type="submit" class="btn btn-dark">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}
