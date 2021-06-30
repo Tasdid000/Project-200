@@ -15,9 +15,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = "ProCoder Admin"
+admin.site.site_title = "ProCoder Admin Panel"
+admin.site.index_title ="Welcome to ProCoder Admin Panel"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('blog/', include('blog.urls')),
+    path('oauth/', include('social_django.urls', namespace='social')),
 
 ]

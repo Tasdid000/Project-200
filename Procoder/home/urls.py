@@ -1,4 +1,5 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
 
 from home import views
 
@@ -9,5 +10,10 @@ urlpatterns = (
     path('search', views.search, name='search'),
     path('hire', views.hire, name='hire'),
     path('project', views.project, name='project'),
+    path('singup', views.handlesingup, name='handlesingup'),
+    path('login', views.handlelogin, name='handlelogin'),
+    path('logout', views.handlelogout, name='handlelogout'),
+    path('error', views.error, name='error'),
+    path('account', views.account, name='account'),
 
 )
