@@ -37,7 +37,7 @@
     <h2>Comments ({{comments.count}})</h2>
     {% for comment in comments %}
     <div class="row my-3">
-        <div class="col-md-1 bg-light"> <img src="{% static '/home/img/9.png' %}" width="70"> </div>
+        <div class="col-md-1 bg-light"> <img src="{% static '/home/img/siam1.png' %}" width="70"> </div>
         <div class="col-md-11 bg-light"> <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}}
             <div> {{comment.comment}}</div>
 
