@@ -7,7 +7,7 @@ from django.utils.timezone import now
 # Create your models here.
 class Post(models.Model):
     sno = models.AutoField(primary_key=True)
-    image = models.FileField(upload_to="blogImg", blank=True)
+    image = models.FileField(upload_to="blogPost", blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     athour = models.CharField(max_length=13)

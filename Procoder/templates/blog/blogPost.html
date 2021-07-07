@@ -9,7 +9,7 @@
     <h2 class="blog-post-title">{{post.title}}</h2>
     <p class="blog-post-meta">{{post.timeStamp}} <a href="/about">{{post.athour}}</a></p>
 
-    <p>{{post.content}}</p>
+    <p>{{post.content |safe}}</p>
 
     <hr>
 </div>

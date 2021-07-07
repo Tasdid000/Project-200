@@ -3,6 +3,14 @@
 
 {% block title %} Blog {% endblock title %}
 
+{% block js %}
+<script>
+let previews = document.getElementsByClassName('preview');
+Array.from(previews).forEach((element)=>{
+    element.innerHTML = element.innerText;
+})
+</script>
+{% endblock js %}
 
 {% block body %}
 <div class="container my-3">
@@ -25,7 +33,7 @@
     <div class="col p-4 d-flex flex-column position-static">
         <h3 class="mb-0">{{post.title}}</h3>
         <div class="mb-1 text-muted">{{post.datetime}}</div>
-        <p class="card-text mb-auto">{{post.content| truncatechars:100 }}</p>
+        <p class="card-text mb-auto"><div class="preview"> {{post.content.image |safe | truncatechars:100 }} </div></p>
         <a _ngcontent-serverapp-c7="" class="btn btn-sm btn-outline-dark" href="/blog/{{post.slug}}">Read More <span
                 _ngcontent-serverapp-c7="" class="glyphicon glyphicon-chevron-right"></span>
         </a>
